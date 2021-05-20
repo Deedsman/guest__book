@@ -5,7 +5,6 @@ import { fetchUsers } from "./reducers/users-reducer";
 import { useForm } from "react-hook-form";
 
 const MainTable = (props) => {
-  debugger;
   const {
     register,
     handleSubmit,

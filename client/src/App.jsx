@@ -6,7 +6,6 @@ import { getGuest } from "./reducers/users-reducer";
 
 function App() {
   const dispatch = useDispatch();
-  debugger;
 
   useEffect(() => {
     dispatch(getGuest());

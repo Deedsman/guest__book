@@ -12,7 +12,6 @@ export const userReducer = (state = initialState, action) => {
     case LOAD_USERS:
       return { ...state, users: action.users };
     case ADD_USER:
-      debugger;
       let infoGuest = action.users;
 
       return { ...state, users: [infoGuest, ...state.users] };
@@ -26,7 +25,6 @@ export const setUsers = (users) => ({ type: LOAD_USERS, users });
 
 export const fetchUsers = (guest) => {
   return function (dispatch) {
-    debugger;
     dispatch(guest);
 
     axios
@@ -50,7 +48,6 @@ export const fetchUsers = (guest) => {
 
 export const getGuest = () => {
   return function (dispatch) {
-    debugger;
     try {
       axios
         .get("/api", {

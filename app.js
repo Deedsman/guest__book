@@ -8,6 +8,7 @@ const path = require('path')
 const cors = require('cors');
 
 app.use(express.json({ extended: true }));
+app.use(cors());
 app.use("/api", userRouter);
 
 const PORT = process.env.PORT || config.get("port");

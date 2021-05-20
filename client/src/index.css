@@ -1,0 +1,15 @@
+@import "~materialize-css/dist/css/materialize.min.css";
+
+.App{
+  text-align: center;
+/* display: flex;
+flex-direction: column;
+text-align: center;
+align-items: center; */
+}
+.messageBlock{
+  text-align: left;
+}
+.nameUser{
+  font-weight: bold;
+}

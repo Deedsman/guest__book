@@ -19,6 +19,7 @@
 .messageText{
   color:#000000ad
 }
+
 .nameUser{
   font-weight: bold;
   white-space: nowrap;
@@ -42,5 +43,17 @@
   }
   .message{
     width: 75% !important;
+  }
+  .App{
+    margin-bottom: 176px;
+  }
+  .App .btn{
+  margin-top: 0;
+  }
+  .App .form{
+    position: fixed;
+    bottom: 0;
+    background: #fff6f6;
+    left: 0 !important;
   }
 }

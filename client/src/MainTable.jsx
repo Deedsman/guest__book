@@ -55,7 +55,7 @@ const MainTable = () => {
       {userList}
 
       <form
-        className='col s12'
+        className='col s12 form'
         onSubmit={handleSubmit(addMessage)}
         onKeyPress={keyPress}
       >

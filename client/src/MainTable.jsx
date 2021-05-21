@@ -64,7 +64,7 @@ const MainTable = () => {
             <input
               {...register("name", {
                 required: true,
-                maxLength: 15,
+                maxLength: 18,
                 pattern: /\w/,
               })}
               onChange={addName}

@@ -4,7 +4,7 @@ import Message from "./Message";
 import { fetchUsers } from "./reducers/users-reducer";
 import { useForm } from "react-hook-form";
 
-const MainTable = (props) => {
+const MainTable = () => {
   const {
     register,
     handleSubmit,
@@ -24,6 +24,7 @@ const MainTable = (props) => {
     return (
       <Message
         key={user._id}
+        id={id}
         name={user.name}
         message={user.text}
         date={user.date}
@@ -40,15 +41,10 @@ const MainTable = (props) => {
     }
   };
   const addMessage = (e) => {
-    debugger;
-    //e.preventDefault();
-    let date = new Date();
-    let currentDate =
-      date.getFullYear() + "/" + date.getMonth() + "/" + date.getDate();
     const addGuest = {
+      _id: Math.random(),
       name: e.name,
       text: e.text,
-      date: currentDate,
     };
     dispatch(fetchUsers({ type: "ADD_USER", users: addGuest }));
     setText("");
@@ -64,11 +60,11 @@ const MainTable = (props) => {
         onKeyPress={keyPress}
       >
         <div className='row'>
-          <div className='input-field col s2'>
+          <div className='input-name input-field col s2'>
             <input
               {...register("name", {
                 required: true,
-                maxLength: 20,
+                maxLength: 15,
                 pattern: /\w/,
               })}
               onChange={addName}
@@ -84,20 +80,20 @@ const MainTable = (props) => {
             />
             {errors?.name?.type === "required" && <p>This field is required</p>}
             {errors?.name?.type === "maxLength" && (
-              <p>First name cannot exceed 20 characters</p>
+              <p>First name cannot exceed 15 characters</p>
             )}
             {errors?.name?.type === "pattern" && (
               <p>Alphabetical characters only</p>
             )}
-            <label className='active' htmlFor='first_name2'>
-              Enter Name
+            <label className='label-name active' htmlFor='first_name2'>
+              Name
             </label>
           </div>
-          <div className='input-field col s8'>
+          <div className='message  input-field col s6'>
             <textarea
               {...register("text", {
                 required: true,
-                pattern: /^[a-zA-Z0-9]+$/,
+                pattern: /\w/,
               })}
               id='icon_prefix2'
               className='materialize-textarea'
@@ -112,18 +108,18 @@ const MainTable = (props) => {
             )}
             <label htmlFor='icon_prefix2'>Message</label>
           </div>
-          <div className='input-field col s2'>
-            <button
-              className='btn waves-effect waves-light'
-              type='submit'
-              name='action'
-            >
-              Add message
-            </button>
-          </div>
+
+          <button
+            className='input-field btn waves-effect waves-light'
+            type='submit'
+            name='action'
+          >
+            Add message
+          </button>
         </div>
       </form>
     </div>
   );
 };
+
 export default MainTable;

@@ -12,7 +12,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className='App'>
+    <div className='App container z-depth-1'>
       <h4 className='App-header'>Hello Guests</h4>
       <MainTable />
     </div>

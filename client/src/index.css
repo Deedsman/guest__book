@@ -2,14 +2,45 @@
 
 .App{
   text-align: center;
-/* display: flex;
-flex-direction: column;
-text-align: center;
-align-items: center; */
+  font-family: 'Noto Sans JP', sans-serif;
+  padding: 0 8px;
+
+}
+.App-header{
+  padding-top: 30px;
+  margin-bottom: 40px;
 }
 .messageBlock{
   text-align: left;
 }
+.messageUser{
+   margin-left: 0 !important;
+}
+.messageText{
+  color:#000000ad
+}
 .nameUser{
   font-weight: bold;
+  white-space: nowrap;
+  margin-left: 0 !important;
+}
+.container-user{
+   border-bottom: 1px solid #80808030;
+}
+
+@media (max-width: 414px){
+  .nameUser{margin-left: 0!important;}
+  .first_name2{
+    padding-left: 0px;
+  }
+  .messageUser{
+    margin-left: 2rem !important;
+  }
+  
+  .input-name{
+    width: 25% !important;
+  }
+  .message{
+    width: 75% !important;
+  }
 }

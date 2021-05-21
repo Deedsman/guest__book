@@ -57,6 +57,7 @@ export const getGuest = () => {
         })
         .then((res) => {
           const data = res.data;
+          data.sort((a, b) => a.date < b.date ? 1 : -1);
           dispatch(setUsers(data));
         })
         .then(() => {

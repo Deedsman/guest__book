@@ -4,11 +4,12 @@ const router = Router();
 
 router.post("/guest", async (req, res) => {
   try {
-    const { name, text, date } = req.body;
+    const { name, text} = req.body;
+    let date = new Date();
     const guest = new User({
       name,
       text,
-      date,
+      date 
     });
 
     await guest.save();
